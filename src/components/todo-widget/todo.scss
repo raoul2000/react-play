@@ -1,0 +1,19 @@
+.todo-widget {
+  border: 1px solid green;
+  padding: 0.5em;
+  margin: 0.5em;
+
+  .title {
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 2px solid #e4dddd;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.5em;
+  }
+
+  .todo-main {
+    margin: 0.5em 0 0.5em 0;
+    background-color: #feffde;
+    padding: 0.5em;
+  }
+}

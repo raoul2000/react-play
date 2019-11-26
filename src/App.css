@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+.main {
+  float:left;
+  margin-left:1em;
+}
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.counter {
+  float: left;
+  width:100%;
+  border: 1px solid blue;
+  padding:1em;
+  margin: 1em;
+}
+
+
+.component-selector {
+  list-style: none;
+  float: left;
+}
+
+.component-selector li {
+
+  padding: 0.5em;
+  margin:4px;
+  border:1px solid grey;
+}
+
+.component-selector li:hover {
+  color:blue;
+  cursor: pointer;
+}
+
+.component-selector li.selected {
+  font-weight: bold;
+}
+
+.bob, .max {
+  margin:1em;
+  padding:1em;
+  border:1px solid yellow;
+}
