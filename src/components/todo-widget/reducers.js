@@ -1,6 +1,10 @@
 import { actionType } from './actions';
 
 const initialState = {
+    todoRequest: {
+        loading: false,
+        error: null
+    },
     todoList: []
 };
 
