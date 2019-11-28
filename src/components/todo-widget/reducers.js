@@ -1,4 +1,4 @@
-import { actionType } from './actions';
+import { REFRESH_TODO_LIST, FETCH_TODO_LIST_START, FETCH_TODO_LIST_SUCCESS, FETCH_TODO_LIST_ERROR } from './actions';
 
 const initialState = {
     todoRequest: {
@@ -11,9 +11,40 @@ const initialState = {
 
 const reducers = (state = initialState, action) => {
     switch (action.type) {
-        case actionType.REFRESH_TODO_LIST:
+        case REFRESH_TODO_LIST:
             return {
-                ...state
+                ...state,
+                todoList: [],
+                todoRequest: {
+                    loading: false,
+                    error: null
+                }
+            };
+        case FETCH_TODO_LIST_START:
+            return {
+                ...state,
+                todoList: [],
+                todoRequest: {
+                    loading: true,
+                    error: null
+                }
+            };
+        case FETCH_TODO_LIST_SUCCESS:
+            return {
+                ...state,
+                todoRequest: {
+                    loading: false,
+                    error: null
+                },
+                todoList: action.payload
+            };
+        case FETCH_TODO_LIST_ERROR:
+            return {
+                ...state,
+                todoRequest: {
+                    loading: false,
+                    error: action.payload.errorMessage
+                }
             };
         default:
             return state;

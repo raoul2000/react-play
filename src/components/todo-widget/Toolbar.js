@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import { refreshTodoList } from './actions';
+import { fetchTodoList } from './actions';
 
 const Toolbar = ({ onRefreshTodoList }) => {
     return (
@@ -15,8 +15,18 @@ Toolbar.propTypes = {
     onRefreshTodoList: propTypes.func.isRequired
 };
 
+/*
 const mapDispatchToProps = {
     onRefreshTodoList: refreshTodoList
 };
+*/
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onRefreshTodoList: () => {
+            return fetchTodoList(dispatch);
+        }
+    }
+}
 
 export default connect(null, mapDispatchToProps)(Toolbar);
