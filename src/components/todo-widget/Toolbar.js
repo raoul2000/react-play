@@ -15,12 +15,6 @@ Toolbar.propTypes = {
     onRefreshTodoList: propTypes.func.isRequired
 };
 
-/*
-const mapDispatchToProps = {
-    onRefreshTodoList: refreshTodoList
-};
-*/
-
 const mapDispatchToProps = dispatch => {
     return {
         onRefreshTodoList: () => {

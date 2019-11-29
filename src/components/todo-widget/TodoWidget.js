@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 const storeTodo = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const TodoWidget = () => {
+
     const handleRefreshTodoList = () => {
         console.log('refreshing todo list ...');
     };
@@ -19,7 +20,7 @@ const TodoWidget = () => {
             <div className="todo-widget">
                 <div className="title">Todo Widget</div>
                 <Toolbar onRefreshTodoList={handleRefreshTodoList} />
-                <TodoMain />
+                <TodoMain overlayMessage="hello" />
             </div>
         </Provider>
     );
