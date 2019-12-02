@@ -14,7 +14,6 @@ const reducers = (state = initialState, action) => {
         case REFRESH_TODO_LIST:
             return {
                 ...state,
-                todoList: [],
                 todoRequest: {
                     loading: false,
                     error: null
@@ -23,7 +22,6 @@ const reducers = (state = initialState, action) => {
         case FETCH_TODO_LIST_START:
             return {
                 ...state,
-                todoList: [],
                 todoRequest: {
                     loading: true,
                     error: null

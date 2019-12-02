@@ -20,7 +20,7 @@ const TodoWidget = () => {
             <div className="todo-widget">
                 <div className="title">Todo Widget</div>
                 <Toolbar onRefreshTodoList={handleRefreshTodoList} />
-                <TodoMain overlayMessage="hello" />
+                <TodoMain overlayMessage="" />
             </div>
         </Provider>
     );
