@@ -15,12 +15,12 @@ export const fetchTodoListStart = () => ({
 
 export const fetchTodoListSuccess = (todoList) => ({
     type: FETCH_TODO_LIST_SUCCESS,
-    payload: todoList
+    payload: { todoList }
 });
 
 export const fetchTodoListError = (errorMessage) => ({
     type: FETCH_TODO_LIST_ERROR,
-    payload: errorMessage
+    payload: { errorMessage }
 });
 
 
@@ -28,10 +28,14 @@ export const fetchTodoList = (dispatch) => {
 
     dispatch(fetchTodoListStart());
     fetch('https://jsonplaceholder.typicode.com/todos')
-        .then(response => response.json())
-        .then(result => {
-            console.log(result);
-            dispatch(fetchTodoListSuccess(result));
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+                    .then(json => dispatch(fetchTodoListSuccess(json)))
+                    .catch(err => dispatch(fetchTodoListError(err.message)))
+            } else {
+                return dispatch(fetchTodoListError(`error code ${response.status} : ${response.statusText ? response.statusText : 'no error message provided'}`))
+            }
         })
         .catch(err => {
             dispatch(fetchTodoListError(err.message));

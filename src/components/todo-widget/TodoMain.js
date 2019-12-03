@@ -1,19 +1,24 @@
 import React from 'react';
 import TodoList from './TodoList';
 import propTypes from 'prop-types';
-
+import { connect } from 'react-redux';
 
 const TodoMain = ({ overlayMessage }) => {
 
-    const overlayStyle = {
-        display: overlayMessage ? "default" : "none"
-    };
+    /**
+     * Overlay element is displayed only if there is an overlay message to show to the user
+     * this can be an info or an error message
+     */
+    const overlayElement = (overlayMessage
+        ? <div className="overlay">
+            {overlayMessage}
+        </div>
+        : null
+    );
 
     return (
         <div className="todo-main">
-            <div className="overlay" style={overlayStyle}>
-                {overlayMessage}
-            </div>
+            {overlayElement}
             <div className="todo-list">
                 <TodoList />
             </div>
@@ -21,17 +26,18 @@ const TodoMain = ({ overlayMessage }) => {
     );
 };
 
+const mapStateToOverlayMessage = (state) => {
+    return state.todoRequest.loading ? "Todo list is loading ..." : state.todoRequest.errorMessage;
+};
+
 TodoMain.propTypes = {
     overlayMessage: propTypes.string
 };
-// TODO: to continue ...
-// connect this component to the store so to react to todoRequest value, representing the state of the request*
-// to get todos items.
-/*
+
 const mapStateToProps = (state) => {
     return {
-        overlayMessage: 
+        overlayMessage: mapStateToOverlayMessage(state)
     };
 };
-*/
-export default TodoMain;
+
+export default connect(mapStateToProps)(TodoMain);

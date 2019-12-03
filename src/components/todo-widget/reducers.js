@@ -3,20 +3,21 @@ import { REFRESH_TODO_LIST, FETCH_TODO_LIST_START, FETCH_TODO_LIST_SUCCESS, FETC
 const initialState = {
     todoRequest: {
         loading: false,
-        error: null
+        errorMessage: null
     },
     todoList: []
 };
 
 
 const reducers = (state = initialState, action) => {
+    //debugger;
     switch (action.type) {
         case REFRESH_TODO_LIST:
             return {
                 ...state,
                 todoRequest: {
                     loading: false,
-                    error: null
+                    errorMessage: null
                 }
             };
         case FETCH_TODO_LIST_START:
@@ -24,7 +25,7 @@ const reducers = (state = initialState, action) => {
                 ...state,
                 todoRequest: {
                     loading: true,
-                    error: null
+                    errorMessage: null
                 }
             };
         case FETCH_TODO_LIST_SUCCESS:
@@ -32,16 +33,16 @@ const reducers = (state = initialState, action) => {
                 ...state,
                 todoRequest: {
                     loading: false,
-                    error: null
+                    errorMessage: null
                 },
-                todoList: action.payload
+                todoList: action.payload.todoList
             };
         case FETCH_TODO_LIST_ERROR:
             return {
                 ...state,
                 todoRequest: {
                     loading: false,
-                    error: action.payload.errorMessage
+                    errorMessage: action.payload.errorMessage
                 }
             };
         default:
