@@ -14,7 +14,9 @@ const TodoMain = ({ overlayMessage }) => {
             <div className="overlay" style={overlayStyle}>
                 {overlayMessage}
             </div>
-            <TodoList />
+            <div className="todo-list">
+                <TodoList />
+            </div>
         </div>
     );
 };

@@ -1,9 +1,12 @@
+/*
 .App {
-  text-align: center;
 }
+*/
+
 .main {
-  float:left;
-  margin-left:1em;
+  float: left;
+  margin-left: 1em;
+  min-width: 50%;
 }
 .App-logo {
   height: 40vmin;
@@ -26,12 +29,11 @@
 
 .counter {
   float: left;
-  width:100%;
+  width: 100%;
   border: 1px solid blue;
-  padding:1em;
+  padding: 1em;
   margin: 1em;
 }
-
 
 .component-selector {
   list-style: none;
@@ -39,14 +41,13 @@
 }
 
 .component-selector li {
-
   padding: 0.5em;
-  margin:4px;
-  border:1px solid grey;
+  margin: 4px;
+  border: 1px solid grey;
 }
 
 .component-selector li:hover {
-  color:blue;
+  color: blue;
   cursor: pointer;
 }
 
@@ -54,8 +55,9 @@
   font-weight: bold;
 }
 
-.bob, .max {
-  margin:1em;
-  padding:1em;
-  border:1px solid yellow;
+.bob,
+.max {
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid yellow;
 }
