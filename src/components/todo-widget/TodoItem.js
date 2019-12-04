@@ -2,9 +2,10 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 
-const TodoItem = ({ title }) => {
+const TodoItem = ({ itemId, title, completed, onChangeChk }) => {
     return (
         <div className="todo-item">
+            <input type="checkbox" defaultChecked={completed} onChange={() => onChangeChk(itemId)} />
             <span className="title">
                 {title}
             </span>

@@ -3,7 +3,9 @@
 export const REFRESH_TODO_LIST = "REFRESH_TODO_LIST";
 export const FETCH_TODO_LIST_START = 'FETCH_TODO_LIST_START';
 export const FETCH_TODO_LIST_SUCCESS = 'FETCH_TODO_LIST_SUCCESS';
-export const FETCH_TODO_LIST_ERROR = 'FETCH_TODO_LIST_ERROR'
+export const FETCH_TODO_LIST_ERROR = 'FETCH_TODO_LIST_ERROR';
+
+export const TOGGLE_TODO_COMPLETE = 'TOGGLE_TODO_COMPLETE';
 
 export const refreshTodoList = () => ({
     type: REFRESH_TODO_LIST
@@ -21,6 +23,11 @@ export const fetchTodoListSuccess = (todoList) => ({
 export const fetchTodoListError = (errorMessage) => ({
     type: FETCH_TODO_LIST_ERROR,
     payload: { errorMessage }
+});
+
+export const toggleTodoComplete = (id) => ({
+    type: TOGGLE_TODO_COMPLETE,
+    payload: { id }
 });
 
 
