@@ -1,4 +1,4 @@
-import { REFRESH_TODO_LIST, FETCH_TODO_LIST_START, FETCH_TODO_LIST_SUCCESS, FETCH_TODO_LIST_ERROR } from './actions';
+import { REFRESH_TODO_LIST, FETCH_TODO_LIST_START, FETCH_TODO_LIST_SUCCESS, FETCH_TODO_LIST_ERROR, TOGGLE_TODO_COMPLETE } from './actions';
 
 const initialState = {
     todoRequest: {
@@ -44,6 +44,17 @@ const reducers = (state = initialState, action) => {
                     loading: false,
                     errorMessage: action.payload.errorMessage
                 }
+            };
+        case TOGGLE_TODO_COMPLETE:
+            return {
+                ...state,
+                todoList: state.todoList.map(todo => {
+                    if (todo.id === action.payload.id) {
+                        return Object.assign(todo, { completed: !todo.completed });
+                    } else {
+                        return todo;
+                    }
+                })
             };
         default:
             return state;
