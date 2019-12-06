@@ -9,7 +9,6 @@ import { toggleTodoComplete } from './actions';
 // passed to the component which is then able to dispatch the apropriate action
 // const TodoList = ({ todoListItems = [], dispath }) => {
 
-//TODO: on todoItem toggle, ALL todo items are updated (this is unecessary as only the one toggle shoule change .. or maybe even not this one)
 const TodoList = ({ todoListItems = [], onToggleTodo }) => {
 
     // uncomment when dispatch is passed as second argument
