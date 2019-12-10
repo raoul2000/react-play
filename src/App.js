@@ -6,6 +6,8 @@ import StoreDemo1 from './components/store-demo1/StoreDemo1';
 import TodoWidget from './components/todo-widget/TodoWidget';
 import RouterDemo1 from './components/router-demo1/RouterDemo1';
 import FriendOfTheDay from './components/friend-of-the-day/FriendOfTheDay';
+import FormDemo1 from './components/form-demo1/FormDemo1';
+
 
 const componentMap = {
   counter: <Counter />,
@@ -13,7 +15,8 @@ const componentMap = {
   storeDemo1: <StoreDemo1 />,
   todoWidget: <TodoWidget />,
   routerDemo1: <RouterDemo1 />,
-  friendOfTheDay: <FriendOfTheDay />
+  friendOfTheDay: <FriendOfTheDay />,
+  formDemo1: <FormDemo1 />
 }
 const DEFAULT_SELECTED_COMPONENT_NAME = 'storeDemo1';
 
