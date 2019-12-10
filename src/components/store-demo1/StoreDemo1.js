@@ -22,16 +22,18 @@ const StoreDemo1 = () => {
             </p>
             <Provider store={store1}>
                 <table>
-                    <tr>
-                        <td>
-                            Bob<br />
-                            <Bob />
-                        </td>
-                        <td>
-                            Max<br />
-                            <Max />
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Bob<br />
+                                <Bob />
+                            </td>
+                            <td>
+                                Max<br />
+                                <Max />
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </Provider>
         </div>
