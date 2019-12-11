@@ -11,9 +11,16 @@ const LoginForm = ({ name = '', onSubmit }) => {
         ev.preventDefault();
 
         // validate inputs
-
+        const formValues = {
+            name: inputName ? inputName.trim() : null,
+            password: inputPassword
+        };
+        if (!formValues.name) {
+            alert('please enter a name');
+            return;
+        }
         // on success
-        onSubmit({ name: inputName, password: inputPassword });
+        onSubmit(formValues);
 
     };
 
