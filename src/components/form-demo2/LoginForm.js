@@ -1,25 +1,34 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+
 
 const LoginForm = ({ onSubmit }) => {
+    /*
+        const validate = (values) => {
+            const errors = {};
+            if (!values.name || values.name.trim().length === 0) {
+                errors.name = "name is required";
+            }
+            if (!values.password || values.password.trim().length === 0) {
+                errors.password = "password is required";
+            }
+            return errors;
+        };
+    */
+    const validationSchema = Yup.object({
+        name: Yup.string().max(10).required('Required'),
+        password: Yup.string().max(15).required('Required')
 
-    const validate = (values) => {
-        const errors = {};
-        if (!values.name || values.name.trim().length === 0) {
-            errors.name = "name is required";
-        }
-        if (!values.password || values.password.trim().length === 0) {
-            errors.password = "password is required";
-        }
-        return errors;
-    };
-
+    });
     const formik = useFormik({
         'initialValues': {
             name: '',
             password: ''
         },
-        validate,
+        //validate,
+        validationSchema,
         'onSubmit': onSubmit,
     });
 
