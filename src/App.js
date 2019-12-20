@@ -9,6 +9,7 @@ import FriendOfTheDay from './components/friend-of-the-day/FriendOfTheDay';
 import FormDemo1 from './components/form-demo1/FormDemo1';
 import FormDemo2 from './components/form-demo2/FormDemo2';
 import SmartInputDemo from './components/smart-input/SmartInputDemo';
+import AntDemo1 from './components/ant-demo1/AntDemo1';
 
 
 
@@ -21,7 +22,8 @@ const componentMap = {
   friendOfTheDay: <FriendOfTheDay />,
   formDemo1: <FormDemo1 />,
   formDemo2: <FormDemo2 />,
-  smartInputDemo: <SmartInputDemo />
+  smartInputDemo: <SmartInputDemo />,
+  antDemo1: <AntDemo1 />
 
 }
 const DEFAULT_SELECTED_COMPONENT_NAME = 'storeDemo1';
