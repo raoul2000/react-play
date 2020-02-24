@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.4",
     "antd": "^3.26.3",
     "formik": "^2.0.7",
     "node-sass": "^4.13.0",
